@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.edu.unifei.simop;
+package br.edu.unifei.simop.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,8 @@ import java.util.List;
  *
  * @author Luiz Fernando
  */
-public class ArchitectureModel extends Model implements Architecture{
+public class ArchitectureModel extends Model<Architecture> implements Architecture {
+
     private List<ArchitectureComponent> architectureComponents = new ArrayList<ArchitectureComponent>();
 
     public List<ArchitectureComponent> getArchitectureComponents() {
@@ -31,5 +32,4 @@ public class ArchitectureModel extends Model implements Architecture{
     public ArchitectureComponent removeArchitectureComp(int index) {
         return architectureComponents.remove(index);
     }
-
 }
