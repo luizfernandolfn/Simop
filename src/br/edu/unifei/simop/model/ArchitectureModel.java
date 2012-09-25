@@ -5,13 +5,14 @@
 package br.edu.unifei.simop.model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
  *
  * @author Luiz Fernando
  */
-public class ArchitectureModel extends Model<Architecture> implements Architecture {
+public class ArchitectureModel extends Model<ArchitectureComponent> implements Architecture {
 
     private List<ArchitectureComponent> architectureComponents = new ArrayList<ArchitectureComponent>();
 
@@ -24,12 +25,19 @@ public class ArchitectureModel extends Model<Architecture> implements Architectu
     }
 
     @Override
-    public boolean addArchitectureComp(ArchitectureComponent station) {
-        return architectureComponents.add(station);
+    public boolean addComponent(ArchitectureComponent comp) {
+        return architectureComponents.add(comp);
     }
 
     @Override
-    public ArchitectureComponent removeArchitectureComp(int index) {
+    public Component removeComponent(int index) {
         return architectureComponents.remove(index);
     }
+
+    @Override
+    public Iterator iteratorComponent() {
+        return architectureComponents.iterator();
+    }
+    
+    
 }

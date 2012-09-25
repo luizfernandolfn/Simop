@@ -9,8 +9,6 @@ package br.edu.unifei.simop.model;
  * @author Luiz Fernando
  */
 public interface Architecture extends TecType {
-
-    public boolean addArchitectureComp(ArchitectureComponent station);
-
-    public ArchitectureComponent removeArchitectureComp(int index);
+    
+    
 }
