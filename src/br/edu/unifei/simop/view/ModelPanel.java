@@ -18,12 +18,12 @@ import javax.swing.JPanel;
  *
  * @author Luiz Fernando
  */
-public class ModelPanel extends JPanel implements MouseMotionListener {
+public class ModelPanel extends JPanel{
 
     private Model model;
 
     public ModelPanel() {
-        this.addMouseMotionListener(this);
+        setLayout(null);
         this.setBackground(Color.white);
         model = new ArchitectureModel(this);
 
@@ -54,14 +54,5 @@ public class ModelPanel extends JPanel implements MouseMotionListener {
 
     public void setModel(Model model) {
         this.model = model;
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        model.getSelectedComponent().setLocation(e.getPoint());
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
     }
 }

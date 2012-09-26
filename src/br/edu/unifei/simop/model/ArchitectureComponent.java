@@ -4,7 +4,6 @@
  */
 package br.edu.unifei.simop.model;
 
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
