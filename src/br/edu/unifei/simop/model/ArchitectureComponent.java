@@ -11,7 +11,8 @@ import java.util.List;
  *
  * @author Luiz Fernando
  */
-public class ArchitectureComponent extends Component{
+public class ArchitectureComponent extends Component {
+
     private List<Relation> relations = new ArrayList<Relation>();
     private int velocity;
 

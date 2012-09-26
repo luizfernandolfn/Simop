@@ -8,13 +8,18 @@ package br.edu.unifei.simop.model;
  *
  * @author Luiz Fernando
  */
-public class Station extends ArchitectureComponent{
+public class Station extends ArchitectureComponent {
+
     private String process;
     private int num_process;
     private double clock;
     private int cache;
     private double hd;
     private NetType network;
+
+    public Station() {
+        this.setText("Estação 1");
+    }
 
     public String getProcess() {
         return process;
