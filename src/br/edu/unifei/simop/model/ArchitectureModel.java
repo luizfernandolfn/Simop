@@ -4,6 +4,7 @@
  */
 package br.edu.unifei.simop.model;
 
+import br.edu.unifei.simop.view.ModelPanel;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -16,6 +17,10 @@ public class ArchitectureModel extends Model<ArchitectureComponent> implements A
 
     private List<ArchitectureComponent> architectureComponents = new ArrayList<ArchitectureComponent>();
 
+    public ArchitectureModel(ModelPanel panel) {
+        super(panel);
+    }
+    
     public List<ArchitectureComponent> getArchitectureComponents() {
         return architectureComponents;
     }

@@ -10,7 +10,7 @@ import br.edu.unifei.simop.model.Model;
 import br.edu.unifei.simop.model.Station;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.List;
 import javax.swing.JPanel;
 
@@ -18,24 +18,25 @@ import javax.swing.JPanel;
  *
  * @author Luiz Fernando
  */
-public class ModelPanel extends JPanel implements MouseListener{
+public class ModelPanel extends JPanel implements MouseMotionListener {
 
     private Model model;
 
     public ModelPanel() {
+        this.addMouseMotionListener(this);
         this.setBackground(Color.white);
-        model = new ArchitectureModel();
-        
-        Station station1 = new Station();
-        Station station2 = new Station();
-        Station station3 = new Station();
-        Station station4 = new Station();
-        
+        model = new ArchitectureModel(this);
+
+        Station station1 = new Station(model);
+        Station station2 = new Station(model);
+        Station station3 = new Station(model);
+        Station station4 = new Station(model);
+
         station1.setLocation(10, 10);
         station2.setLocation(50, 10);
         station3.setLocation(80, 10);
         station4.setLocation(120, 10);
-        
+
         model.addComponent(station1);
         model.addComponent(station2);
         model.addComponent(station3);
@@ -56,28 +57,11 @@ public class ModelPanel extends JPanel implements MouseListener{
     }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-        
-        System.out.println("teste");
+    public void mouseDragged(MouseEvent e) {
+        model.getSelectedComponent().setLocation(e.getPoint());
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-        System.out.println("testeeeee");
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void mouseMoved(MouseEvent e) {
     }
 }

@@ -4,6 +4,7 @@
  */
 package br.edu.unifei.simop.model;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,11 @@ public class ArchitectureComponent extends Component {
 
     private List<Relation> relations = new ArrayList<Relation>();
     private int velocity;
-
+    
+    public ArchitectureComponent(Model model) {
+        super(model);
+    }
+    
     public List<Relation> getRelations() {
         return relations;
     }

@@ -11,6 +11,10 @@ package br.edu.unifei.simop.model;
 public class Switch extends ArchitectureComponent{
     private double bus;
 
+    public Switch(Model model) {
+        super(model);
+    }
+    
     public double getBus() {
         return bus;
     }

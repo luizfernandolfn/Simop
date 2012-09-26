@@ -4,48 +4,33 @@
  */
 package br.edu.unifei.simop.model;
 
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JButton;
+import javax.swing.TransferHandler;
 
 /**
  *
  * @author Luiz Fernando
  */
-public abstract class Component extends JButton implements MouseMotionListener, MouseListener {
+public abstract class Component extends JButton {
 
-    public Component() {
+    private Model model;
+
+    public Component(final Model model) {
+        this.model = model;
         this.setVisible(true);
         this.setBounds(20, 20, 100, 40);
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        System.out.println("boooooooooooooooooo");
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
+        this.setText("Component");
+        
+        
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                model.setSelectedComponent(Component.this);
+            }
+        });
     }
 }

@@ -17,8 +17,8 @@ public class Station extends ArchitectureComponent {
     private double hd;
     private NetType network;
 
-    public Station() {
-        this.setText("Estação 1");
+    public Station(Model model) {
+        super(model);
     }
 
     public String getProcess() {
